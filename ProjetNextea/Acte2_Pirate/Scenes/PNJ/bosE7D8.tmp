@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0uvwprmivkbo"]
+
+[ext_resource type="Script" path="res://Acte2_Pirate/Scripts/PNJ/boss_pirate.gd" id="1_sy8b6"]
+[ext_resource type="Texture2D" uid="uid://nx6fmp6mgejd" path="res://Acte2_Pirate/ImportImages/PNJ/Malakar/Malakar Voidwalker.png" id="1_vdsut"]
+[ext_resource type="Texture2D" uid="uid://d18k8q8f0b7mi" path="res://Acte2_Pirate/ImportImages/PNJ/Malakar/bc71c818-a63d-415d-87aa-872f9c898a43-removebg-preview.png" id="2_of4qw"]
+[ext_resource type="Texture2D" uid="uid://bei6olbntdpx4" path="res://Acte2_Pirate/ImportImages/PNJ/Malakar/Malakar.png" id="3_liob6"]
+[ext_resource type="Script" path="res://Global/state_machine.gd" id="5_1wrmq"]
+[ext_resource type="PackedScene" uid="uid://blluf2fe3v25" path="res://Acte3_Vampire/Scenes/Boss/Attaque/attaque_melee_lucius.tscn" id="5_r87jp"]
+[ext_resource type="Script" path="res://Acte2_Pirate/Scripts/PNJ/Boss/StateMachine/idleMalakar.gd" id="6_xbaem"]
+[ext_resource type="Script" path="res://Acte2_Pirate/Scripts/PNJ/Boss/StateMachine/deplacementMalakar.gd" id="7_lce3e"]
+[ext_resource type="Script" path="res://Acte2_Pirate/Scripts/PNJ/Boss/StateMachine/attaque_meleeMalakar.gd" id="9_qyi4i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6b0oa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_of4qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_liob6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_of4qw")
+}],
+"loop": false,
+"name": &"attaque",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_of4qw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vdsut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vdsut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vdsut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_of4qw")
+}],
+"loop": false,
+"name": &"cri",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_of4qw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="bossPirate" type="CharacterBody2D" groups=["MalakarBoss"]]
+script = ExtResource("1_sy8b6")
+
+[node name="Malakar Voidwalker" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4, -219)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_6b0oa")
+animation = &"idle"
+
+[node name="AttaqueMeleeLucius" parent="Malakar Voidwalker" groups=["attaqueMelee"] instance=ExtResource("5_r87jp")]
+position = Vector2(-192.5, -1.66667)
+scale = Vector2(4, 4)
+attaqueEnemy = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-8, 46)
+scale = Vector2(1.2, 1.2)
+polygon = PackedVector2Array(28.3333, -45.8333, 107.5, -35.8333, 90, -75.8333, 92, -92, 94, -97, 85.8333, -133.333, 95, -210.833, 91.6667, -259.167, 54, -332, 35, -352.5, 15, -364.167, -21.6667, -362.5, -19, -328, -22, -320, -32, -311, -37, -297, -48, -278, -48.3333, -255, -44.1667, -227.5, -34, -206, -43, -170, -49.1667, -130, -45.8333, -85, -65.8333, -71.6667, -81.6667, -63.3333, -62.5, -47.5, -20, -48.3333)
+
+[node name="StateMachine" type="Node2D" parent="."]
+script = ExtResource("5_1wrmq")
+
+[node name="Idle" type="Node2D" parent="StateMachine"]
+script = ExtResource("6_xbaem")
+
+[node name="TimerIdle" type="Timer" parent="StateMachine/Idle"]
+one_shot = true
+
+[node name="Deplacement" type="Node2D" parent="StateMachine"]
+script = ExtResource("7_lce3e")
+
+[node name="TimerDeplacement" type="Timer" parent="StateMachine/Deplacement"]
+one_shot = true
+
+[node name="AttaqueMelee" type="Node2D" parent="StateMachine" groups=["attaqueMelee"]]
+script = ExtResource("9_qyi4i")
+
+[node name="TimerAttaqueMelee" type="Timer" parent="StateMachine/AttaqueMelee"]
+one_shot = true
+
+[node name="CriRalliement" type="Node2D" parent="StateMachine"]
+
+[node name="TimerCriRalliement" type="Timer" parent="StateMachine/CriRalliement"]
+one_shot = true
+
+[connection signal="startBossFight" from="." to="StateMachine" method="_on_boss_pirate_start_boss_fight"]
+[connection signal="timeout" from="StateMachine/Idle/TimerIdle" to="StateMachine/Idle" method="_on_timer_idle_timeout"]
+[connection signal="timeout" from="StateMachine/Deplacement/TimerDeplacement" to="StateMachine/Deplacement" method="_on_timer_teleport_timeout"]
+[connection signal="timeout" from="StateMachine/AttaqueMelee/TimerAttaqueMelee" to="StateMachine/AttaqueMelee" method="_on_timer_attaque_melee_timeout"]
+[connection signal="timeout" from="StateMachine/CriRalliement/TimerCriRalliement" to="StateMachine/CriRalliement" method="_on_timer_lancer_couteau_timeout"]

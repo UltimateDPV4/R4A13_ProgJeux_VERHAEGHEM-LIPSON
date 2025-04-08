@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://beh7ckev2m101"]
+
+[ext_resource type="Script" path="res://Acte2_Pirate/Scripts/PNJ/enemy_pirate.gd" id="1_bretg"]
+[ext_resource type="Texture2D" uid="uid://c2bb1m1g407bp" path="res://Acte2_Pirate/ImportImages/PNJ/Pirate/Pirate.png" id="2_4eocn"]
+[ext_resource type="PackedScene" uid="uid://blluf2fe3v25" path="res://Acte3_Vampire/Scenes/Boss/Attaque/attaque_melee_lucius.tscn" id="3_jpaqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwymj"]
+size = Vector2(127, 231)
+
+[node name="EnemyPirate" type="CharacterBody2D"]
+script = ExtResource("1_bretg")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+position = Vector2(0, 10)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4eocn")
+
+[node name="AttaqueMelee" parent="Enemy" groups=["attaqueMelee"] instance=ExtResource("3_jpaqu")]
+position = Vector2(215, -5)
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 11)
+shape = SubResource("RectangleShape2D_wwymj")
+
+[node name="TimerAttaque" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="TimerAttaque" to="." method="_on_timer_attaque_timeout"]
+
+[editable path="Enemy/AttaqueMelee"]

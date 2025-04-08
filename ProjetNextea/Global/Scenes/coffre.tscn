@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://doijjeo4oxh1s"]
+
+[ext_resource type="Script" path="res://Global/Scripts/coffre.gd" id="1_eqrl7"]
+[ext_resource type="Texture2D" uid="uid://buxtefj0ye8fj" path="res://Global/ImportImage/TileSet/Nature/4 Animated objects/Chest.png" id="2_orm15"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebpsm"]
+atlas = ExtResource("2_orm15")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocha1"]
+atlas = ExtResource("2_orm15")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy5b0"]
+atlas = ExtResource("2_orm15")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g80bo"]
+atlas = ExtResource("2_orm15")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_12byy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebpsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocha1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy5b0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g80bo")
+}],
+"loop": false,
+"name": &"coffreOuverture",
+"speed": 5.0
+}]
+
+[node name="coffre" type="Area2D" groups=["InteractionObject"]]
+script = ExtResource("1_eqrl7")
+
+[node name="coffreSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_12byy")
+animation = &"coffreOuverture"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-7, 0, -12, 1, -13, 2, -15, 4, -16, 9, -16, 16, 10, 16, 10, 9, 9, 5, 6, 3, -1, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

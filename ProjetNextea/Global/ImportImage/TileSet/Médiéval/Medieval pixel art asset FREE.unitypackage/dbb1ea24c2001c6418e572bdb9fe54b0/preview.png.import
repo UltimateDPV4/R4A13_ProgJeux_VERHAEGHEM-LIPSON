@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c0tj158fsm26a"
+path="res://.godot/imported/preview.png-9e68118ae1e13b1caf4955188150cb86.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Global/ImportImage/TileSet/Médiéval/Medieval pixel art asset FREE.unitypackage/dbb1ea24c2001c6418e572bdb9fe54b0/preview.png"
+dest_files=["res://.godot/imported/preview.png-9e68118ae1e13b1caf4955188150cb86.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
