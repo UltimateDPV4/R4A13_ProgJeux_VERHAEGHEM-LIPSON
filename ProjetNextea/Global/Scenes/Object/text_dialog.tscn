@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0dm6xkiwsdda"]
+
+[ext_resource type="Script" path="res://Global/Scripts/Talk/text_dialog.gd" id="1_ldd4n"]
+[ext_resource type="Texture2D" uid="uid://cpsetpvwuvapu" path="res://Global/ImportImage/DialogSystem/pixil-frame-0 (3).png" id="2_2jx56"]
+[ext_resource type="FontFile" uid="uid://dbumgpok5ysd8" path="res://Global/Font/Bescii-Mono.ttf" id="3_vjco0"]
+
+[node name="MarginContainerForDialogBox" type="MarginContainer"]
+z_index = 5
+script = ExtResource("1_ldd4n")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_2jx56")
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="MarginContainerForText" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 25
+
+[node name="Label" type="Label" parent="MarginContainerForText"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vjco0")
+vertical_alignment = 1
+
+[node name="TimerDisplayLetters" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="TimerDisplayLetters" to="." method="_on_timer_display_letters_timeout"]

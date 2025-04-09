@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqixnahamc6f5"]
+
+[ext_resource type="Script" path="res://Global/Scripts/UI/start_menu_ui.gd" id="1_oqxwy"]
+[ext_resource type="FontFile" uid="uid://nbld1q0icbqh" path="res://Global/Font/at01.ttf" id="2_1s56k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fbey4"]
+font = ExtResource("2_1s56k")
+font_size = 150
+font_color = Color(0.316638, 0.533193, 0.24163, 1)
+outline_size = 3
+outline_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2te1t"]
+font = ExtResource("2_1s56k")
+font_size = 80
+font_color = Color(0.45507, 0.730303, 0.353791, 1)
+
+[node name="StartMenuiUi" type="CanvasLayer"]
+script = ExtResource("1_oqxwy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.159698, 0.195428, 0.10199, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.5
+offset_top = -81.0
+offset_right = 203.5
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Nextea's Adventures"
+label_settings = SubResource("LabelSettings_fbey4")
+
+[node name="PressButton" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Press [Space] to start"
+label_settings = SubResource("LabelSettings_2te1t")
+horizontal_alignment = 1

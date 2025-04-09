@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmyfc21mthe6b"]
+
+[ext_resource type="Script" path="res://Acte1_Foret/Scripts/Scenes/ObjectOfMap/teleportDoor.gd" id="1_5m2q8"]
+[ext_resource type="Script" path="res://Global/Scripts/Object/TeleportPlayer.gd" id="2_r0qle"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inea6"]
+size = Vector2(32, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydqk1"]
+size = Vector2(34, 44)
+
+[node name="TeleportPlayer" type="Node2D"]
+script = ExtResource("1_5m2q8")
+
+[node name="spawn1" type="Area2D" parent="." groups=["InteractionObject"]]
+position = Vector2(-32, 0)
+script = ExtResource("2_r0qle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawn1"]
+shape = SubResource("RectangleShape2D_inea6")
+
+[node name="spawn2" type="Area2D" parent="." groups=["InteractionObject"]]
+script = ExtResource("2_r0qle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawn2"]
+shape = SubResource("RectangleShape2D_ydqk1")
+
+[connection signal="body_entered" from="spawn1" to="spawn1" method="_on_body_entered"]
+[connection signal="body_exited" from="spawn1" to="spawn1" method="_on_body_exited"]
+[connection signal="teleportPlayer" from="spawn1" to="." method="_on_spawn_1_teleport_player"]
+[connection signal="body_entered" from="spawn2" to="spawn2" method="_on_body_entered"]
+[connection signal="body_exited" from="spawn2" to="spawn2" method="_on_body_exited"]
+[connection signal="teleportPlayer" from="spawn2" to="." method="_on_spawn_2_teleport_player"]

@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://db5g4lokyowc1"]
+
+[ext_resource type="FontFile" uid="uid://nbld1q0icbqh" path="res://Global/Font/at01.ttf" id="1_0fpik"]
+[ext_resource type="AudioStream" uid="uid://r8ajep5lhaeg" path="res://Acte3_Vampire/Audio/Octopath Traveler 2 - Dear Travelers (1).mp3" id="1_nik06"]
+[ext_resource type="Script" path="res://Global/Scripts/UI/endGame_ui.gd" id="1_u5i3k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fbey4"]
+font = ExtResource("1_0fpik")
+font_size = 150
+font_color = Color(0.348969, 0.526887, 0.224755, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2uvxh"]
+font = ExtResource("1_0fpik")
+font_size = 75
+font_color = Color(0.53619, 0.675795, 0.389818, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2te1t"]
+font = ExtResource("1_0fpik")
+font_size = 75
+font_color = Color(0.470794, 0.697382, 0.31388, 1)
+
+[node name="EndGameUI" type="CanvasLayer"]
+script = ExtResource("1_u5i3k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.016184, 0.0839808, 0.065275, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.5
+offset_top = -81.0
+offset_right = 203.5
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="ThankToPlay" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Bravo, Nextea a vaincu"
+label_settings = SubResource("LabelSettings_fbey4")
+
+[node name="Score" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Nombre Coffres trouves : 0/14"
+label_settings = SubResource("LabelSettings_2uvxh")
+horizontal_alignment = 1
+
+[node name="Score2" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Temps passe : 00:00"
+label_settings = SubResource("LabelSettings_2uvxh")
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -242.5
+offset_top = -162.0
+offset_right = 242.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="PressButton" type="Label" parent="VBoxContainer2/CenterContainer"]
+layout_mode = 2
+text = "Vive Nextea ! Gloire a Nextea !"
+label_settings = SubResource("LabelSettings_2te1t")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_nik06")
+volume_db = 10.0
+autoplay = true
+parameters/looping = true
