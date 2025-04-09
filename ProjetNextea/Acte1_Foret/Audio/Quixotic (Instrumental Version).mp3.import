@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c40ae3pgmoyhw"
+path="res://.godot/imported/Quixotic (Instrumental Version).mp3-85c72f4b12c7e6578aa3ca18808c09b5.mp3str"
+
+[deps]
+
+source_file="res://Acte1_Foret/Audio/Quixotic (Instrumental Version).mp3"
+dest_files=["res://.godot/imported/Quixotic (Instrumental Version).mp3-85c72f4b12c7e6578aa3ca18808c09b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1ddhd67i2mcd"
+path="res://.godot/imported/Octopath Traveler 2 - Totohaha Night.mp3-226ec7bdee1cf25017e6afdc5e720aa0.mp3str"
+
+[deps]
+
+source_file="res://Acte3_Vampire/Audio/Octopath Traveler 2 - Totohaha Night.mp3"
+dest_files=["res://.godot/imported/Octopath Traveler 2 - Totohaha Night.mp3-226ec7bdee1cf25017e6afdc5e720aa0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

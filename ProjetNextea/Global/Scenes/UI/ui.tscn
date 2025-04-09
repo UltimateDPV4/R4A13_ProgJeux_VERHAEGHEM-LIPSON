@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://cijq7e6ndo1r3"]
+
+[ext_resource type="Script" path="res://Global/Scripts/UI/ui.gd" id="1_8aivy"]
+[ext_resource type="Texture2D" uid="uid://c2mvm6h5h64ti" path="res://Global/ImportImage/SpritePerso/Nextea PixelArt.png" id="1_hlimn"]
+[ext_resource type="Texture2D" uid="uid://gfx2rmnw0ix8" path="res://Global/ImportImage/TileSet/Nature/3 Objects/chest.png" id="3_4ue7r"]
+[ext_resource type="FontFile" uid="uid://nbld1q0icbqh" path="res://Global/Font/at01.ttf" id="4_u4qv5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ndeg2"]
+font = ExtResource("4_u4qv5")
+font_size = 64
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4xhqu"]
+font = ExtResource("4_u4qv5")
+font_size = 32
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="UI" type="CanvasLayer" groups=["UI"]]
+script = ExtResource("1_8aivy")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.5
+offset_right = 220.5
+offset_bottom = 81.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "00:00"
+label_settings = SubResource("LabelSettings_ndeg2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 395.0
+offset_top = 20.0
+offset_right = 523.0
+offset_bottom = 60.0
+grow_horizontal = 2
+scale = Vector2(1.75, 1.829)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="IconVie1" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_hlimn")
+expand_mode = 2
+
+[node name="IconVie2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_hlimn")
+expand_mode = 2
+
+[node name="IconVie3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_hlimn")
+expand_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -620.0
+offset_top = 20.0
+offset_right = -492.0
+offset_bottom = 60.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.568)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Collectible" type="TextureRect" parent="HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_4ue7r")
+expand_mode = 3
+flip_h = true
+
+[node name="numberCollectible" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "0/4"
+label_settings = SubResource("LabelSettings_4xhqu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerAddTime" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="TimerAddTime" to="." method="_on_timer_add_time_timeout"]

@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqvr07y1kq3pa"]
+
+[ext_resource type="Script" path="res://Acte2_Pirate/Scripts/Map/village_pirate.gd" id="1_1xbn8"]
+[ext_resource type="PackedScene" uid="uid://cnv437depd6sh" path="res://Acte2_Pirate/Scenes/Map/VillagePirateTileMap.tscn" id="2_2vmax"]
+[ext_resource type="PackedScene" uid="uid://biakeyhrdud76" path="res://Global/Scenes/Player.tscn" id="3_0mmx6"]
+[ext_resource type="Texture2D" uid="uid://cu55yca16bvbl" path="res://Global/ImportImage/TileSet/Village/Final/Tiles/Background_1.png" id="4_2xsfy"]
+[ext_resource type="Texture2D" uid="uid://bdvft2fsxoxbt" path="res://Global/ImportImage/TileSet/Village/Final/Tiles/Background_2.png" id="5_0p764"]
+[ext_resource type="PackedScene" uid="uid://uo3ekg1svapg" path="res://Acte2_Pirate/Scenes/PNJ/oliver_blackwood.tscn" id="5_m81yy"]
+[ext_resource type="AudioStream" uid="uid://5ivu7ci837du" path="res://Acte2_Pirate/Audio/Octopath Traveler 2 - Cropdale, Village at Peace Day.mp3" id="7_mkrot"]
+[ext_resource type="PackedScene" uid="uid://cijq7e6ndo1r3" path="res://Global/Scenes/UI/ui.tscn" id="8_fvc83"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hj55o"]
+size = Vector2(336.667, 324)
+
+[node name="VillagePirate" type="Node2D"]
+script = ExtResource("1_1xbn8")
+
+[node name="TileMap" parent="." instance=ExtResource("2_2vmax")]
+
+[node name="OliverBlackwood" parent="." instance=ExtResource("5_m81yy")]
+position = Vector2(2556, -16)
+scale = Vector2(0.1, 0.1)
+talkLines = Array[String](["Salut Nextea !", "Tu es déjà revenu de ton voyage ?", "Attend... tu sembles différent...", "Ooh désolé, je t'ai confondu avec une autre personne.", "Hum ? Tu es à la recherche de ce Nextea ?", "Oui, je sais où il est parti.", "Je peux t'y emmener !", "Cela tombe bien j'ai encore des produits à vendre.", "Oh j'oublie mes manières...", "Je me nomme Oliver Blackwood, à ton service.", "Rejoins moi à mon bateau, lorsque tu seras prêt."])
+
+[node name="NextLevel" type="Area2D" parent="."]
+position = Vector2(2841, -230)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevel"]
+position = Vector2(37, 8.66669)
+shape = SubResource("RectangleShape2D_hj55o")
+
+[node name="Player" parent="." instance=ExtResource("3_0mmx6")]
+position = Vector2(-1989, -735)
+scale = Vector2(0.1, 0.1)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -460)
+zoom = Vector2(3.5, 3.5)
+
+[node name="Background" type="Sprite2D" parent="Player"]
+z_index = -5
+position = Vector2(0, -500)
+scale = Vector2(8, 8)
+texture = ExtResource("4_2xsfy")
+
+[node name="Background2" type="Sprite2D" parent="Player"]
+z_index = -6
+position = Vector2(0, -500)
+scale = Vector2(8, 8)
+texture = ExtResource("5_0p764")
+
+[node name="MusicAudio" type="AudioStreamPlayer2D" parent="Player"]
+scale = Vector2(10, 10)
+stream = ExtResource("7_mkrot")
+volume_db = 10.0
+autoplay = true
+parameters/looping = true
+
+[node name="UI" parent="." instance=ExtResource("8_fvc83")]
+
+[connection signal="startTalking" from="OliverBlackwood" to="." method="_on_oliver_blackwood_start_talking"]
+[connection signal="body_entered" from="NextLevel" to="." method="_on_next_level_body_entered"]

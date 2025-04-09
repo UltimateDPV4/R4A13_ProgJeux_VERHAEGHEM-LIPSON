@@ -1,0 +1,356 @@
+[gd_scene load_steps=31 format=3 uid="uid://dhdjj502h0fhi"]
+
+[ext_resource type="Script" path="res://Acte1_Foret/Scripts/PNJ/Goulu/VagueGoulu.gd" id="1_84kvb"]
+[ext_resource type="Texture2D" uid="uid://cnk2mq8ru8fca" path="res://Acte1_Foret/ImportImages/PNJ/Goulu/Goulu idle.png" id="2_3qu07"]
+[ext_resource type="Texture2D" uid="uid://dupqwvd7hn70h" path="res://Acte1_Foret/ImportImages/PNJ/Goulu/Goulu rolling.png" id="3_1rhre"]
+[ext_resource type="Texture2D" uid="uid://cvho0bpw46wam" path="res://Acte1_Foret/ImportImages/PNJ/Goulu/Goulu talking.png" id="4_or5dy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46k6a"]
+atlas = ExtResource("2_3qu07")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyn81"]
+atlas = ExtResource("2_3qu07")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n0mo"]
+atlas = ExtResource("2_3qu07")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kus8a"]
+atlas = ExtResource("2_3qu07")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tcrl"]
+atlas = ExtResource("2_3qu07")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpd7e"]
+atlas = ExtResource("2_3qu07")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqapd"]
+atlas = ExtResource("2_3qu07")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p8j6"]
+atlas = ExtResource("2_3qu07")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owpfj"]
+atlas = ExtResource("3_1rhre")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnwtj"]
+atlas = ExtResource("3_1rhre")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjy3v"]
+atlas = ExtResource("3_1rhre")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x26rc"]
+atlas = ExtResource("3_1rhre")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvauh"]
+atlas = ExtResource("3_1rhre")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0shiq"]
+atlas = ExtResource("3_1rhre")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v20ux"]
+atlas = ExtResource("3_1rhre")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a5jl"]
+atlas = ExtResource("3_1rhre")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27rn5"]
+atlas = ExtResource("3_1rhre")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw7tg"]
+atlas = ExtResource("4_or5dy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64gu4"]
+atlas = ExtResource("4_or5dy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0ysy"]
+atlas = ExtResource("4_or5dy")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhlcj"]
+atlas = ExtResource("4_or5dy")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jty6e"]
+atlas = ExtResource("4_or5dy")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tru5"]
+atlas = ExtResource("4_or5dy")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkkj5"]
+atlas = ExtResource("4_or5dy")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42k46"]
+atlas = ExtResource("4_or5dy")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ofgn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46k6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyn81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n0mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kus8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tcrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpd7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqapd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p8j6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owpfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnwtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjy3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x26rc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvauh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0shiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v20ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a5jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27rn5")
+}],
+"loop": true,
+"name": &"rolling",
+"speed": 17.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw7tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64gu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0ysy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhlcj")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_jty6e")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_7tru5")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_vkkj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42k46")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
+
+[node name="VagueGoulu" type="Area2D"]
+script = ExtResource("1_84kvb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+z_index = 3
+position = Vector2(4, 712)
+polygon = PackedVector2Array(6, -26, 0, -130, 184, -357, 510, -683, 659, -666, 780, -702, 922, -632, 909, -503, 947, -416, 917, -342, 953, -234, 1051, -130, 1036, -13, 803, 21, 34, 16)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(333, 726)
+scale = Vector2(0.7, 0.7)
+
+[node name="GouluSprite" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(-288.571, -222.857)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.545065
+
+[node name="GouluSprite2" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(-141.429, -418.571)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite4" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(-2.85715, -614.286)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite5" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(130, -644.286)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite6" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 2
+position = Vector2(115.714, -420)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite7" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(325.714, -502.857)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite8" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(204.286, -788.571)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite3" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 2
+position = Vector2(0, -225)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite9" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(478.571, -890)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite10" type="AnimatedSprite2D" parent="Node2D"]
+z_index = -1
+position = Vector2(357.143, -918.571)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite11" type="AnimatedSprite2D" parent="Node2D"]
+z_index = -1
+position = Vector2(697.143, -937.143)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.637945
+
+[node name="GouluSprite12" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(726, -711)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite13" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(610, -577.143)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite14" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 2
+position = Vector2(874, -238)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite19" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 2
+position = Vector2(594.286, -224.286)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite15" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(483, -360)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+
+[node name="GouluSprite16" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(490, -691)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+frame_progress = 0.155789
+
+[node name="GouluSprite17" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 2
+position = Vector2(298, -225)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+
+[node name="GouluSprite18" type="AnimatedSprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(743, -459)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_1ofgn")
+animation = &"rolling"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

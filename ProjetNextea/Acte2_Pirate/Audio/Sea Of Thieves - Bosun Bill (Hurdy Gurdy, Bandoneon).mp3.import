@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://curs7xhsaul73"
+path="res://.godot/imported/Sea Of Thieves - Bosun Bill (Hurdy Gurdy, Bandoneon).mp3-c13de98db9bc572ef713cf4fde252fbb.mp3str"
+
+[deps]
+
+source_file="res://Acte2_Pirate/Audio/Sea Of Thieves - Bosun Bill (Hurdy Gurdy, Bandoneon).mp3"
+dest_files=["res://.godot/imported/Sea Of Thieves - Bosun Bill (Hurdy Gurdy, Bandoneon).mp3-c13de98db9bc572ef713cf4fde252fbb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
