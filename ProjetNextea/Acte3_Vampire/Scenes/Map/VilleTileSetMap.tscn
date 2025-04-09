@@ -1312,7 +1312,6 @@ flipCoffre = true
 
 [node name="coffre4" parent="." instance=ExtResource("2_uaxnj")]
 position = Vector2(1268, -448)
-flipCoffre = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-408, 29)
