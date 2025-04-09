@@ -15,10 +15,11 @@ signal positionPlayer(float)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.numberCollectedCollectible += Global.collectible
-	Global.collectible = 0
-	Global.maxCollectible = 4
-	Global.maxAllCollectible += Global.maxCollectible
+	if !Global.playerDeath:
+		Global.numberCollectedCollectible += Global.collectible
+		Global.collectible = 0
+		Global.maxCollectible = 4
+		Global.maxAllCollectible += Global.maxCollectible
 	Global.health = 3
 	Global.numberEnemy = 0
 	Global.sceneToRespawn = "res://Acte1_Foret/Scenes/Map/Tower.tscn"

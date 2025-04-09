@@ -1540,7 +1540,7 @@ shape = SubResource("RectangleShape2D_dckyn")
 debug_color = Color(0.289504, 0.615713, 0.387023, 0.42)
 
 [node name="Player" parent="." instance=ExtResource("9_5arsl")]
-position = Vector2(1079, -105)
+position = Vector2(-583, -453)
 scale = Vector2(0.1, 0.1)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

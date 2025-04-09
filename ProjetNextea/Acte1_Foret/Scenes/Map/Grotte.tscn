@@ -136,8 +136,6 @@ shape = SubResource("RectangleShape2D_8tll4")
 [node name="Projectiles" type="Node2D" parent="."]
 z_index = 4
 
-[node name="UI" parent="." instance=ExtResource("6_fcncm")]
-
 [node name="Tuto" type="Node2D" parent="."]
 
 [node name="Area2DDeplacer" type="Area2D" parent="Tuto"]
@@ -215,6 +213,8 @@ texture = ExtResource("14_xgs4q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tuto/Area2DTirer"]
 position = Vector2(1209, -7)
 shape = SubResource("RectangleShape2D_cofye")
+
+[node name="UI" parent="." instance=ExtResource("6_fcncm")]
 
 [connection signal="projectile" from="Player" to="." method="_on_player_projectile"]
 [connection signal="projectileFlipDirection" from="Player" to="." method="_on_player_projectile_flip_direction"]
