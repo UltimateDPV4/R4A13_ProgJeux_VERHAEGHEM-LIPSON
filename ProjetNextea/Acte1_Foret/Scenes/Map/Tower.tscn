@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Acte1_Foret/Scripts/Scenes/Map/tower.gd" id="1_immwe"]
 [ext_resource type="PackedScene" uid="uid://ba7ng6saetiyp" path="res://Acte1_Foret/Scenes/Goulu/goulu.tscn" id="2_itstj"]
-[ext_resource type="PackedScene" uid="uid://d4mjmnvdaiesv" path="res://Global/Scenes/projectilePlayer.tscn" id="3_5w8um"]
+[ext_resource type="PackedScene" uid="uid://d4mjmnvdaiesv" path="res://Global/Scenes/Object/projectilePlayer.tscn" id="3_5w8um"]
 [ext_resource type="AudioStream" uid="uid://c40ae3pgmoyhw" path="res://Acte1_Foret/Audio/Quixotic (Instrumental Version).mp3" id="4_eb4ty"]
 [ext_resource type="AudioStream" uid="uid://cll4qxj4fxjp" path="res://Acte1_Foret/Audio/King of Puppets (Battle Intro).mp3" id="5_fdo4n"]
 [ext_resource type="AudioStream" uid="uid://h72r24l3ecp" path="res://Acte1_Foret/Audio/Shattered Memories.mp3" id="6_cihnt"]
@@ -1555,6 +1555,7 @@ scale = Vector2(10, 10)
 stream = ExtResource("11_85nly")
 volume_db = 10.0
 autoplay = true
+parameters/looping = true
 
 [node name="Cinematic" type="Node2D" parent="."]
 position = Vector2(88, -1546)

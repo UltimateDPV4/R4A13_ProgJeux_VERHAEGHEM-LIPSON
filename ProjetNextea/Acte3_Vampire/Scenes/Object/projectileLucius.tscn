@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dtnglwvspy8g7"]
 
-[ext_resource type="Script" path="res://Global/Scripts/projectile.gd" id="1_5yohm"]
+[ext_resource type="Script" path="res://Global/Scripts/Object/projectile.gd" id="1_5yohm"]
 [ext_resource type="Texture2D" uid="uid://bp8xockq1q4mf" path="res://Acte3_Vampire/ImportImages/Object/couteau.png" id="2_tnjqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ue5qv"]

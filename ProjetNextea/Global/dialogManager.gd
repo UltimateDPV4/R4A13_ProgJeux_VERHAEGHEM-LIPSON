@@ -1,6 +1,6 @@
 extends Node
 
-@onready var textBoxScene = preload("res://Global/Scenes/text_dialog.tscn")
+@onready var textBoxScene = preload("res://Global/Scenes/Object/text_dialog.tscn")
 
 var dialogLines: Array[String] = []
 var currentLineIndex := 0

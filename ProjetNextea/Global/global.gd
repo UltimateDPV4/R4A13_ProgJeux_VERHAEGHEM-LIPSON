@@ -15,4 +15,6 @@ var healthBoss := 100
 var numberEnemy := 0
 var canInteract := false
 
+var sceneToRespawn := ""
+
 @onready var spriteProjectilePlayer = load("res://Global/ImportImage/ParDefaut/Projectile.png")

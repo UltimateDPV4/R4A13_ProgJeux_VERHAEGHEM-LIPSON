@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cpqq7rotv6j7r"]
 
-[ext_resource type="Script" path="res://Global/Scripts/game_over_ui.gd" id="1_agx1k"]
-[ext_resource type="PackedScene" uid="uid://bkaaheflkq0m7" path="res://Acte2_Pirate/Scenes/ShipBoss.tscn" id="2_ciyjy"]
+[ext_resource type="Script" path="res://Global/Scripts/UI/game_over_ui.gd" id="1_agx1k"]
+[ext_resource type="PackedScene" uid="uid://bkaaheflkq0m7" path="res://Acte2_Pirate/Scenes/Map/ShipBoss.tscn" id="2_ciyjy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fbey4"]
 font_size = 75

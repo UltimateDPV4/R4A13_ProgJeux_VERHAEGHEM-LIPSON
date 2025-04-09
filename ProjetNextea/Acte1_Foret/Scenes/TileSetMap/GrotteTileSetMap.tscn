@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://drr5x0rb26lwh" path="res://Global/ImportImage/TileSet/Village/Final/Tiles/Tiles.png" id="1_ljtxb"]
 [ext_resource type="Texture2D" uid="uid://biuimimlfjp15" path="res://Global/ImportImage/TileSet/Médiéval/Medieval_tiles_free2.png" id="1_oggl2"]
 [ext_resource type="Texture2D" uid="uid://dvr83wq37a0bg" path="res://Global/ImportImage/TileSet/Nature/1 Tiles/Tileset.png" id="2_8k6e1"]
-[ext_resource type="PackedScene" uid="uid://doijjeo4oxh1s" path="res://Global/Scenes/coffre.tscn" id="2_i0m7v"]
+[ext_resource type="PackedScene" uid="uid://doijjeo4oxh1s" path="res://Global/Scenes/Object/coffre.tscn" id="2_i0m7v"]
 [ext_resource type="Texture2D" uid="uid://b8v8iiug2y5k4" path="res://Global/ImportImage/TileSet/Nature/3 Objects/Bushes/9.png" id="3_ohnjf"]
 [ext_resource type="Texture2D" uid="uid://r3drsimsxrrq" path="res://Global/ImportImage/TileSet/Nature/3 Objects/Bushes/5.png" id="4_fpri3"]
 [ext_resource type="Texture2D" uid="uid://5bnkwi0prrdc" path="res://Global/ImportImage/TileSet/Nature/3 Objects/Bushes/2.png" id="5_7bocy"]

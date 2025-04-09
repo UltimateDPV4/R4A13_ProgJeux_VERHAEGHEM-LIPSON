@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dvr83wq37a0bg" path="res://Global/ImportImage/TileSet/Nature/1 Tiles/Tileset.png" id="3_wgr7d"]
 [ext_resource type="Texture2D" uid="uid://0ds66xeonsga" path="res://Global/ImportImage/TileSet/Médiéval/PNG/Objects/door4.png" id="4_4wndb"]
 [ext_resource type="Texture2D" uid="uid://nvpgvhckaxa" path="res://Global/ImportImage/TileSet/Médiéval/PNG/Objects/door2.png" id="5_36u5u"]
-[ext_resource type="PackedScene" uid="uid://doijjeo4oxh1s" path="res://Global/Scenes/coffre.tscn" id="5_yoy4d"]
-[ext_resource type="PackedScene" uid="uid://dmyfc21mthe6b" path="res://Global/Scenes/teleportPlayer.tscn" id="6_4batn"]
+[ext_resource type="PackedScene" uid="uid://doijjeo4oxh1s" path="res://Global/Scenes/Object/coffre.tscn" id="5_yoy4d"]
+[ext_resource type="PackedScene" uid="uid://dmyfc21mthe6b" path="res://Global/Scenes/Object/teleportPlayer.tscn" id="6_4batn"]
 [ext_resource type="PackedScene" uid="uid://6jhn4n3mi6ql" path="res://Acte1_Foret/Scenes/Object/plateformeMovement.tscn" id="9_6qf4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ixyhx"]

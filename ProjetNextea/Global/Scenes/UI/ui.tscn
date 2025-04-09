@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cijq7e6ndo1r3"]
 
-[ext_resource type="Script" path="res://Global/Scripts/ui.gd" id="1_8aivy"]
+[ext_resource type="Script" path="res://Global/Scripts/UI/ui.gd" id="1_8aivy"]
 [ext_resource type="Texture2D" uid="uid://c2mvm6h5h64ti" path="res://Global/ImportImage/SpritePerso/Nextea PixelArt.png" id="1_hlimn"]
 [ext_resource type="Texture2D" uid="uid://gfx2rmnw0ix8" path="res://Global/ImportImage/TileSet/Nature/3 Objects/chest.png" id="3_4ue7r"]
 [ext_resource type="FontFile" uid="uid://nbld1q0icbqh" path="res://Global/Font/at01.ttf" id="4_u4qv5"]

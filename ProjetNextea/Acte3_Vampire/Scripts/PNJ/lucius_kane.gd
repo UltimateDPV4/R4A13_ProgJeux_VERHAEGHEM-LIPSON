@@ -17,9 +17,12 @@ extends CharacterBody2D
 	"pour Lucius Kane ! Ton futur protecteur."
 ]
 
-@onready var positionTextDialog = Vector2($ZoneTextDialog.global_position.x, $ZoneTextDialog.global_position.y)
+@onready var positionTextDialog = Vector2(global_position.x - 10, global_position.y - 10)
+@onready var positionTextDialogBoss = Vector2($ZoneTextDialog.global_position.x, $ZoneTextDialog.global_position.y)
+
 @onready var player = owner.get_parent().find_child("Player")
 @onready var sprite = $LuciusKaneSprite
+var talkedVille := false
 
 signal startBossFight
 
@@ -31,10 +34,17 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	if talkedVille:
+		if !DialogManager.dialogActive:
+			$LuciusKaneSprite.play("teleport")
+			set_physics_process(false)
+			$CollisionShape2D.disabled = true
+			talkedVille = false
 
 
 func _on_area_to_talk_start_dialog() -> void:
 	sprite.play("talking")
+	talkedVille = true
 	DialogManager.start_dialog(positionTextDialog, talkLines, Vector2(0.4, 0.4))
 	print("Talking with Lucius Kane")
 
@@ -42,7 +52,7 @@ func startBossDialog() -> void:
 	$AreaToTalk.hide()
 	$AreaToTalk/CollisionTalk.disabled = true
 	sprite.play("talking")
-	DialogManager.start_dialog(positionTextDialog, bossTalkLines, Vector2(1.0, 1.0))
+	DialogManager.start_dialog(positionTextDialogBoss, bossTalkLines, Vector2(1.0, 1.0))
 	print("Talking with Lucius Kane (Auto Boss)")
 
 func _on_cathedrale_boss_start_boss_fight() -> void:

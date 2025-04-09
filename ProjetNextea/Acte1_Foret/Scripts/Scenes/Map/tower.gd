@@ -21,6 +21,7 @@ func _ready() -> void:
 	Global.maxAllCollectible += Global.maxCollectible
 	Global.health = 3
 	Global.numberEnemy = 0
+	Global.sceneToRespawn = "res://Acte1_Foret/Scenes/Map/Tower.tscn"
 	
 	get_tree().call_group('UI', 'set_health', Global.health)
 	
@@ -144,7 +145,7 @@ func _on_timer_auto_dialog_timeout() -> void:
 
 func _on_next_level_body_entered(body: Node2D) -> void:
 	if (body.is_in_group("player")):
-		get_tree().change_scene_to_file("res://Acte2_Pirate/Scenes/villagePirate.tscn")
+		get_tree().change_scene_to_file("res://Acte2_Pirate/Scenes/Map/villagePirate.tscn")
 
 
 func _on_player_projectile(pos: Variant) -> void:

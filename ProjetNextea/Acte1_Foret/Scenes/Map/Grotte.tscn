@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://b32sp4pv8q26w"]
+[gd_scene load_steps=22 format=3 uid="uid://b32sp4pv8q26w"]
 
 [ext_resource type="Script" path="res://Acte1_Foret/Scripts/Scenes/Map/grotte.gd" id="1_mgr3x"]
-[ext_resource type="PackedScene" uid="uid://d4mjmnvdaiesv" path="res://Global/Scenes/projectilePlayer.tscn" id="2_fcobi"]
+[ext_resource type="PackedScene" uid="uid://d4mjmnvdaiesv" path="res://Global/Scenes/Object/projectilePlayer.tscn" id="2_fcobi"]
 [ext_resource type="PackedScene" uid="uid://bubomporuqouu" path="res://Acte1_Foret/Scenes/TileSetMap/GrotteTileSetMap.tscn" id="2_qyjhe"]
 [ext_resource type="PackedScene" uid="uid://biakeyhrdud76" path="res://Global/Scenes/Player.tscn" id="3_64wbj"]
 [ext_resource type="Texture2D" uid="uid://cnnu6mrrdg6k8" path="res://Global/ImportImage/TileSet/Nature/2 Background/Background.png" id="4_miojh"]
@@ -10,6 +10,10 @@
 [ext_resource type="Script" path="res://Acte1_Foret/Scripts/Scenes/ObjectOfMap/destroyWay.gd" id="7_44rbl"]
 [ext_resource type="Texture2D" uid="uid://cb3yok0u5f1wj" path="res://Global/ImportImage/TileSet/Nature/3 Objects/Boxes/4.png" id="8_le1mn"]
 [ext_resource type="AudioStream" uid="uid://bmutftb4gl14k" path="res://Acte1_Foret/Audio/Octopath Traveler 2 - The Brightlands Night.mp3" id="9_nk1vq"]
+[ext_resource type="Texture2D" uid="uid://co7oy5irf3vb0" path="res://Global/ImportImage/ParDefaut/boutons.png" id="11_op6ho"]
+[ext_resource type="Texture2D" uid="uid://lx36mumfr88y" path="res://Global/ImportImage/ParDefaut/espace.png" id="12_wa4kg"]
+[ext_resource type="Texture2D" uid="uid://detnkc1ymqlyj" path="res://Global/ImportImage/ParDefaut/lettre-e.png" id="13_7wymg"]
+[ext_resource type="Texture2D" uid="uid://rn218ogf63ob" path="res://Global/ImportImage/ParDefaut/lettre-f.png" id="14_xgs4q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q41lc"]
 size = Vector2(46.6667, 41.3333)
@@ -20,6 +24,18 @@ size = Vector2(20, 147)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tll4"]
 size = Vector2(20, 147)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5iyn8"]
+size = Vector2(20, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq8vl"]
+size = Vector2(15, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhuo6"]
+size = Vector2(27, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cofye"]
+size = Vector2(109, 45)
+
 [node name="Grotte" type="Node2D"]
 script = ExtResource("1_mgr3x")
 projectile_scene = ExtResource("2_fcobi")
@@ -27,7 +43,7 @@ projectile_scene = ExtResource("2_fcobi")
 [node name="TileMap" parent="." instance=ExtResource("2_qyjhe")]
 
 [node name="Player" parent="." instance=ExtResource("3_64wbj")]
-position = Vector2(-819, -585)
+position = Vector2(-819, -600)
 scale = Vector2(0.1, 0.1)
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
@@ -122,7 +138,97 @@ z_index = 4
 
 [node name="UI" parent="." instance=ExtResource("6_fcncm")]
 
+[node name="Tuto" type="Node2D" parent="."]
+
+[node name="Area2DDeplacer" type="Area2D" parent="Tuto"]
+
+[node name="Boutons" type="Sprite2D" parent="Tuto/Area2DDeplacer"]
+visible = false
+position = Vector2(-721, -634)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_op6ho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tuto/Area2DDeplacer"]
+position = Vector2(-817, -585)
+shape = SubResource("RectangleShape2D_5iyn8")
+
+[node name="Area2DSauter" type="Area2D" parent="Tuto"]
+position = Vector2(152, 2)
+
+[node name="Espace" type="Sprite2D" parent="Tuto/Area2DSauter"]
+visible = false
+position = Vector2(112, -46)
+scale = Vector2(0.1, 0.075)
+texture = ExtResource("12_wa4kg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tuto/Area2DSauter"]
+position = Vector2(2.5, -34)
+shape = SubResource("RectangleShape2D_vq8vl")
+
+[node name="Area2DInteragir" type="Area2D" parent="Tuto"]
+position = Vector2(129, -167)
+
+[node name="Lettre-e" type="Sprite2D" parent="Tuto/Area2DInteragir"]
+visible = false
+position = Vector2(1, -49)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("13_7wymg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tuto/Area2DInteragir"]
+position = Vector2(-26, -6)
+shape = SubResource("RectangleShape2D_jhuo6")
+
+[node name="Area2DInteragir2" type="Area2D" parent="Tuto"]
+position = Vector2(828, -106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tuto/Area2DInteragir2"]
+position = Vector2(29, -4)
+shape = SubResource("RectangleShape2D_jhuo6")
+
+[node name="Lettre-e" type="Sprite2D" parent="Tuto/Area2DInteragir2"]
+visible = false
+position = Vector2(1, -49)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("13_7wymg")
+
+[node name="Area2DInteragir3" type="Area2D" parent="Tuto"]
+position = Vector2(1172, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tuto/Area2DInteragir3"]
+position = Vector2(17.5, -4)
+shape = SubResource("RectangleShape2D_jhuo6")
+
+[node name="Lettre-e" type="Sprite2D" parent="Tuto/Area2DInteragir3"]
+visible = false
+position = Vector2(47, -60)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("13_7wymg")
+
+[node name="Area2DTirer" type="Area2D" parent="Tuto"]
+
+[node name="Lettre-f" type="Sprite2D" parent="Tuto/Area2DTirer"]
+visible = false
+position = Vector2(1190, -50)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("14_xgs4q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tuto/Area2DTirer"]
+position = Vector2(1209, -7)
+shape = SubResource("RectangleShape2D_cofye")
+
 [connection signal="projectile" from="Player" to="." method="_on_player_projectile"]
 [connection signal="projectileFlipDirection" from="Player" to="." method="_on_player_projectile_flip_direction"]
 [connection signal="body_entered" from="NextLevel" to="." method="_on_next_level_body_entered"]
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="body_entered" from="Tuto/Area2DDeplacer" to="." method="_on_area_2d_deplacer_body_entered"]
+[connection signal="body_exited" from="Tuto/Area2DDeplacer" to="." method="_on_area_2d_deplacer_body_exited"]
+[connection signal="body_entered" from="Tuto/Area2DSauter" to="." method="_on_area_2d_sauter_body_entered"]
+[connection signal="body_exited" from="Tuto/Area2DSauter" to="." method="_on_area_2d_sauter_body_exited"]
+[connection signal="body_entered" from="Tuto/Area2DInteragir" to="." method="_on_area_2d_interagir_body_entered"]
+[connection signal="body_exited" from="Tuto/Area2DInteragir" to="." method="_on_area_2d_interagir_body_exited"]
+[connection signal="body_entered" from="Tuto/Area2DInteragir2" to="." method="_on_area_2d_interagir_2_body_entered"]
+[connection signal="body_exited" from="Tuto/Area2DInteragir2" to="." method="_on_area_2d_interagir_2_body_exited"]
+[connection signal="body_entered" from="Tuto/Area2DInteragir3" to="." method="_on_area_2d_interagir_3_body_entered"]
+[connection signal="body_exited" from="Tuto/Area2DInteragir3" to="." method="_on_area_2d_interagir_3_body_exited"]
+[connection signal="body_entered" from="Tuto/Area2DTirer" to="." method="_on_area_2d_tirer_body_entered"]
+[connection signal="body_exited" from="Tuto/Area2DTirer" to="." method="_on_area_2d_tirer_body_exited"]

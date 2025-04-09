@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dupqwvd7hn70h" path="res://Acte1_Foret/ImportImages/PNJ/Goulu/Goulu rolling.png" id="2_41axs"]
 [ext_resource type="Texture2D" uid="uid://cvho0bpw46wam" path="res://Acte1_Foret/ImportImages/PNJ/Goulu/Goulu talking.png" id="3_um8gt"]
 [ext_resource type="Script" path="res://Global/state_machine.gd" id="5_2agba"]
-[ext_resource type="Script" path="res://Global/Scripts/StartToTalk.gd" id="5_8fw5w"]
+[ext_resource type="Script" path="res://Global/Scripts/Talk/StartToTalk.gd" id="5_8fw5w"]
 [ext_resource type="Script" path="res://Acte3_Vampire/Scripts/StateBoss/teleportLucius.gd" id="6_u5nqe"]
 [ext_resource type="Script" path="res://Acte3_Vampire/Scripts/StateBoss/idleLucius.gd" id="7_3xngd"]
 [ext_resource type="Script" path="res://Acte3_Vampire/Scripts/StateBoss/attaque_meleeLucius.gd" id="8_jw6hs"]

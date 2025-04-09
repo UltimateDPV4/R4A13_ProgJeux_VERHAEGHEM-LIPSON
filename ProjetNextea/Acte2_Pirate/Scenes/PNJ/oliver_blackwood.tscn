@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Acte2_Pirate/Scripts/PNJ/oliver_blackwood.gd" id="1_qa2ua"]
 [ext_resource type="Texture2D" uid="uid://cxnmaj5xe31ug" path="res://Acte2_Pirate/ImportImages/PNJ/Oliver/Oliver Blackwood Idle.png" id="2_2k6cr"]
-[ext_resource type="Script" path="res://Global/Scripts/StartToTalk.gd" id="3_7j3q6"]
+[ext_resource type="Script" path="res://Global/Scripts/Talk/StartToTalk.gd" id="3_7j3q6"]
 [ext_resource type="Texture2D" uid="uid://bkmca50fshx4" path="res://Acte2_Pirate/ImportImages/PNJ/Oliver/Oliver Blackwood talking.png" id="3_jqurh"]
 [ext_resource type="Texture2D" uid="uid://bidfghvavpoho" path="res://Acte2_Pirate/ImportImages/PNJ/Oliver/Oliver Blackwood walking.png" id="4_082y3"]
 

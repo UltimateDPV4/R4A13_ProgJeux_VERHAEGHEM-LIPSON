@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_to_talk_start_dialog() -> void:
 	$OliverBlackwoodSprite.play("talking")
-	DialogManager.start_dialog(positionTextDialog, talkLines, Vector2(0.5,0.5))
+	DialogManager.start_dialog(positionTextDialog, talkLines, Vector2(0.3,0.3))
 	print("Talking with Oliver Blackwood")
 	startTalking.emit()
 

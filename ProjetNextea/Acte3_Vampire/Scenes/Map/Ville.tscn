@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://duwn23jr5p4i5"]
+
+[ext_resource type="Script" path="res://Acte3_Vampire/Scripts/Map/ville.gd" id="1_rxh3f"]
+[ext_resource type="PackedScene" uid="uid://dsu8ec6tr2pno" path="res://Acte3_Vampire/Scenes/Map/VilleTileSetMap.tscn" id="2_8552i"]
+[ext_resource type="PackedScene" uid="uid://biakeyhrdud76" path="res://Global/Scenes/Player.tscn" id="4_bnvrw"]
+[ext_resource type="Texture2D" uid="uid://cyv44ptrrsk4k" path="res://Global/ImportImage/TileSet/Ville/2 Background/Night/1.png" id="5_8671p"]
+[ext_resource type="Texture2D" uid="uid://dck0ii70nfbk1" path="res://Global/ImportImage/TileSet/Ville/2 Background/Night/2.png" id="6_4uovy"]
+[ext_resource type="Texture2D" uid="uid://estx16vgasll" path="res://Global/ImportImage/TileSet/Ville/2 Background/Night/3.png" id="7_b3prh"]
+[ext_resource type="Texture2D" uid="uid://h7brqfi60aig" path="res://Global/ImportImage/TileSet/Ville/2 Background/Night/4.png" id="8_fv1o7"]
+[ext_resource type="Texture2D" uid="uid://b8pj5j55yodas" path="res://Global/ImportImage/TileSet/Ville/2 Background/Night/5.png" id="9_rwwx8"]
+[ext_resource type="AudioStream" uid="uid://1ddhd67i2mcd" path="res://Acte3_Vampire/Audio/Octopath Traveler 2 - Totohaha Night.mp3" id="10_0mnha"]
+[ext_resource type="PackedScene" uid="uid://cijq7e6ndo1r3" path="res://Global/Scenes/UI/ui.tscn" id="11_tkr6g"]
+[ext_resource type="PackedScene" uid="uid://bdrs0odaa5qwr" path="res://Acte3_Vampire/Scenes/PNJ/lucius_kane.tscn" id="12_47513"]
+[ext_resource type="Texture2D" uid="uid://0w8c7ovgc773" path="res://Acte3_Vampire/ImportImages/Background/Catedrale.png" id="12_iau8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf7g1"]
+size = Vector2(32, 154.667)
+
+[node name="Ville" type="Node2D"]
+script = ExtResource("1_rxh3f")
+
+[node name="TileMap" parent="." instance=ExtResource("2_8552i")]
+
+[node name="NextLevel" type="Area2D" parent="."]
+position = Vector2(1726, -203)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevel"]
+z_index = 1
+position = Vector2(-2, -48)
+shape = SubResource("RectangleShape2D_gf7g1")
+
+[node name="Player" parent="." instance=ExtResource("4_bnvrw")]
+position = Vector2(48, 89)
+scale = Vector2(0.1, 0.1)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -460)
+zoom = Vector2(3.5, 3.5)
+
+[node name="Background" type="Sprite2D" parent="Player"]
+z_index = -5
+position = Vector2(0, -500)
+scale = Vector2(7, 7)
+texture = ExtResource("5_8671p")
+
+[node name="Background2" type="Sprite2D" parent="Player"]
+z_index = -5
+position = Vector2(0, -500)
+scale = Vector2(7, 7)
+texture = ExtResource("6_4uovy")
+
+[node name="Background3" type="Sprite2D" parent="Player"]
+z_index = -5
+position = Vector2(0, -500)
+scale = Vector2(7, 7)
+texture = ExtResource("7_b3prh")
+
+[node name="Background4" type="Sprite2D" parent="Player"]
+z_index = -5
+position = Vector2(0, -500)
+scale = Vector2(7, 7)
+texture = ExtResource("8_fv1o7")
+
+[node name="Background5" type="Sprite2D" parent="Player"]
+z_index = -5
+position = Vector2(0, -500)
+scale = Vector2(7, 7)
+texture = ExtResource("9_rwwx8")
+
+[node name="MusicAudio" type="AudioStreamPlayer2D" parent="Player"]
+scale = Vector2(10, 10)
+stream = ExtResource("10_0mnha")
+volume_db = 10.0
+autoplay = true
+parameters/looping = true
+
+[node name="UI" parent="." instance=ExtResource("11_tkr6g")]
+
+[node name="Catedrale" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(1787, -304)
+texture = ExtResource("12_iau8p")
+
+[node name="LuciusKane" parent="." instance=ExtResource("12_47513")]
+position = Vector2(482, 49)
+scale = Vector2(0.1, 0.1)
+talkLines = Array[String](["....", "Tu es encore en vie, Nextea ?", "Moi, qui pensait t'avoir tué.", "Attend, une seconde....", "Oh tu m'as fait drôlement peur, tu lui ressemble tellement.", "Lucius Kane, pour vous servir.", "Enfin, pas pour très longtemps.", "Je comptais te tuer aussi. Il le faut, faux Nextea.", "Mais soit content. Grâce à toi, tu créeras un nouveau Dieu.", "Je t'attend à ma cathédrale."])
+
+[connection signal="body_entered" from="NextLevel" to="." method="_on_next_level_body_entered"]

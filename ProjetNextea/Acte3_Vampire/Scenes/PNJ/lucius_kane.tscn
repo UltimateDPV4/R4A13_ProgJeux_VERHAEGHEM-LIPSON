@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Acte3_Vampire/Scripts/PNJ/lucius_kane.gd" id="1_1ofoo"]
 [ext_resource type="Texture2D" uid="uid://1x2a3odwjlyc" path="res://Acte3_Vampire/ImportImages/PNJ/LuciusKane/Lucius Kane idle.png" id="2_jq6d8"]
-[ext_resource type="Script" path="res://Global/Scripts/StartToTalk.gd" id="3_3xprc"]
+[ext_resource type="Script" path="res://Global/Scripts/Talk/StartToTalk.gd" id="3_3xprc"]
 [ext_resource type="Texture2D" uid="uid://dcbs4llrhods8" path="res://Acte3_Vampire/ImportImages/PNJ/LuciusKane/Lucius Kane apparition couteau.png" id="3_jkcqe"]
 [ext_resource type="PackedScene" uid="uid://blluf2fe3v25" path="res://Acte3_Vampire/Scenes/Boss/Attaque/attaque_melee_lucius.tscn" id="3_p53cu"]
 [ext_resource type="Texture2D" uid="uid://b1cv3jfss6lem" path="res://Acte3_Vampire/ImportImages/PNJ/LuciusKane/Lucius Kane teleport.png" id="4_4bpft"]
